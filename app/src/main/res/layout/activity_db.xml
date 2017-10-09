@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_db"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+<Button
+    android:id="@+id/add"
+    android:layout_width="100dp"
+    android:layout_gravity="center_horizontal"
+    android:text="增加"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_height="50dp" />
+    <Button
+        android:id="@+id/search"
+        android:layout_width="100dp"
+        android:layout_gravity="center_horizontal"
+        android:text="查询"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp" />
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="100dp"
+        android:layout_gravity="center_horizontal"
+        android:text="删除"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp" />
+    <Button
+        android:id="@+id/alter"
+        android:layout_width="100dp"
+        android:layout_gravity="center_horizontal"
+        android:text="修改"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="50dp" />
+    <TextView
+        android:id="@+id/show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/contents"
+        android:layout_width="200dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorAccent"
+        android:layout_height="50dp" />
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    //chrome查看数据库,插上数据线之后，在浏览器上输入chrome://inspect
+    compile 'com.facebook.stetho:stetho:1.5.0'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    //websocket
+    compile 'org.java-websocket:Java-WebSocket:1.3.4'
+    //webserver
+    compile files('libs/commons-fileupload-1.3.1.jar')
+    compile files('libs/httpclient-4.2.5.jar')
+    compile files('libs/httpmime-4.2.5.jar')
+    compile files('libs/servlet-api-2.5.jar')
+}
