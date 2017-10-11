@@ -20,7 +20,7 @@ android {
 }
 greendao {
     //数据库版本号
-    schemaVersion 1
+    schemaVersion 2
 }
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -30,5 +30,8 @@ dependencies {
     compile 'org.greenrobot:greendao:3.2.2'
     compile 'org.greenrobot:greendao-generator:3.2.2'
     compile project(':ziggs')
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
 }

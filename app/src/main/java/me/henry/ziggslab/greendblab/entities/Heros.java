@@ -16,19 +16,25 @@ public class Heros {
     private String age;
     private Boolean sex;
     private Integer phone;
+    private String nickname;
+    private Boolean isUpgrate;
+
     public Heros(String name, String age, Boolean sex, Integer phone) {
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.phone = phone;
     }
-    @Generated(hash = 1116193761)
-    public Heros(Long id, String name, String age, Boolean sex, Integer phone) {
+    @Generated(hash = 1492650458)
+    public Heros(Long id, String name, String age, Boolean sex, Integer phone,
+            String nickname, Boolean isUpgrate) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.phone = phone;
+        this.nickname = nickname;
+        this.isUpgrate = isUpgrate;
     }
     @Generated(hash = 1535359116)
     public Heros() {
@@ -73,5 +79,17 @@ public class Heros {
                 ", sex=" + sex +
                 ", phone=" + phone +
                 '}';
+    }
+    public String getNickname() {
+        return this.nickname;
+    }
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+    public Boolean getIsUpgrate() {
+        return this.isUpgrate;
+    }
+    public void setIsUpgrate(Boolean isUpgrate) {
+        this.isUpgrate = isUpgrate;
     }
 }
