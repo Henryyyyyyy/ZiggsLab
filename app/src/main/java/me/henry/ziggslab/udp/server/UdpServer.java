@@ -9,8 +9,6 @@ import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
 import java.net.SocketException;
 
-import me.henry.ziggslab.MainActivity;
-
 public class UdpServer implements Runnable {
     private String ip = null;  
     private int port = 0;  
@@ -64,7 +62,7 @@ public class UdpServer implements Runnable {
             ds = new DatagramSocket(inetSocketAddress);  
             Log.i("SocketInfo", "UDP服务器已经启动");  
   
-            SetSoTime(3000);  
+            SetSoTime(0);
             //设置超时，不需要可以删除  
         } catch (SocketException e) {  
             e.printStackTrace();  
@@ -74,14 +72,14 @@ public class UdpServer implements Runnable {
         while (udpLife) {  
             try {  
                 Log.i("SocketInfo", "UDP监听中");  
-                ds.receive(dpRcv);  
-  
+                ds.receive(dpRcv);
+                Log.i("SocketInfo", "receive之后");
                 String string = new String(dpRcv.getData(), dpRcv.getOffset(), dpRcv.getLength());  
                 Log.i("SocketInfo", "收到信息：" + string);  
                 Intent intent =new Intent();
                 intent.setAction("udpReceiver");  
                 intent.putExtra("udpReceiver",string);  
-               UDPServerActivity.context.sendBroadcast(intent);//将消息发送给主界面
+                UDPServerActivity.context.sendBroadcast(intent);//将消息发送给主界面
   
             } catch (IOException e) {  
                 e.printStackTrace();  

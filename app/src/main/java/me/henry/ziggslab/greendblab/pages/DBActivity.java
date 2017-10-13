@@ -75,8 +75,8 @@ public class DBActivity extends AppCompatActivity implements View.OnClickListene
             case R.id.search:
 //                ZiggsDao<Heros> lev = new ZiggsDao(herosDao);
 //                lev.searchByWhere(HerosDao.Properties.Sex.eq(false));
-                  wsClient=WsClient.create();
-                  wsClient.connect();
+//                  wsClient=WsClient.create();
+//                  wsClient.connect();
 
                 break;
 

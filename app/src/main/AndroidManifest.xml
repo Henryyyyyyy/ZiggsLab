@@ -18,16 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".greendblab.pages.DBActivity"></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".udp.server.UDPServerActivity">
+        <activity android:name=".MainActivity" >
 
-        </activity>
-        <activity android:name=".udp.client.UDPClientActivity">
+            </activity>
+        <activity android:name=".udp.server.UDPServerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".udp.client.UDPClientActivity">
+
 
         </activity>
     </application>

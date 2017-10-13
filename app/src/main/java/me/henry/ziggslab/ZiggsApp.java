@@ -5,6 +5,7 @@ import android.app.Application;
 import com.facebook.stetho.Stetho;
 
 import me.henry.ziggslab.greendblab.DataBaseManager;
+import me.henry.ziggslab.websockett.SocketManager;
 
 /**
  * Created by zj on 2017/10/9.
@@ -17,6 +18,7 @@ public class ZiggsApp extends Application{
         super.onCreate();
         initDataBase();
         initStetho();
+        SocketManager.getInstance().init(this);
     }
     private void initDataBase() {
         DataBaseManager.getInstance().init(this);
