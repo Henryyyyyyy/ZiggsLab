@@ -32,6 +32,7 @@ public class UDPSocketConnect implements Runnable {
 
     public UDPSocketConnect() {
         sendRunnable = new SendRunnable();
+
     }
 
     @Override
@@ -43,7 +44,7 @@ public class UDPSocketConnect implements Runnable {
         isConnect = true;
         while (isConnect) {
             try {
-                //XLog.d(TAG, "UDP正在连接");
+                Log.d(TAG, "UDP正在连接");
                 mSocket = new UDPSocketFactory();
             } catch (SocketException se) {
                 try {
@@ -66,9 +67,9 @@ public class UDPSocketConnect implements Runnable {
 
             isReceive = true;
             isSend = true;
-            //XLog.d(TAG, "UDP连接成功");
+            //Log.d(TAG, "UDP连接成功");
             new Thread(sendRunnable).start();
-            //XLog.d(TAG, "开始接受UDP消息");
+            //Log.d(TAG, "开始接受UDP消息");
 
             while (isReceive) {
                 try {
@@ -81,7 +82,9 @@ public class UDPSocketConnect implements Runnable {
         try {
             if (sendRunnable != null)
                 sendRunnable.stop();
-            isReceive = false;
+
+                isReceive = false;
+
             if (mSocket != null)
                 mSocket.close();
             //mSocket = null;
@@ -128,11 +131,13 @@ public class UDPSocketConnect implements Runnable {
     }
 
     /**
+     *
      * 是否需要覆盖超时统计，在场景每一个命令都需要独立的超时统计，插座则需要覆盖上一个超时统计,默认需要
      *
      * @param callback
      * @param isNeedCover
      * @param isNeedCheckPermission 是否需要检测权限，一般调用此方法都是传false，不需要检测
+     *
      */
     public void setUDPSocketCallback(UDPSocketCallback callback, boolean isNeedCover, boolean isNeedCheckPermission) {
         this.callback = callback;
@@ -161,7 +166,8 @@ public class UDPSocketConnect implements Runnable {
 
         @Override
         public void run() {
-            //XLog.d(TAG, "UDP发送线程开启");
+            //Log.d(TAG, "UDP发送线程开启");
+
             synchronized (lock) {
                 while (isSend) {
                     if (datas.size() < 1) {
@@ -176,6 +182,7 @@ public class UDPSocketConnect implements Runnable {
                         try {
                             buffer = datas.remove(0);
                         } catch (Exception e) {
+
                         }
                         if (isSend) {
                             try {
@@ -190,7 +197,7 @@ public class UDPSocketConnect implements Runnable {
                     }
                 }
             }
-            //XLog.d(TAG, "UDP发送线程结束");
+            //Log.d(TAG, "UDP发送线程结束");
         }
 
         public void stop() {

@@ -9,7 +9,6 @@ import org.java_websocket.handshake.ServerHandshake;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -26,15 +25,14 @@ public class ZiggsWebSocketClient extends WebSocketClient {
     }
 
     public static ZiggsWebSocketClient create(Map<String, String> headers, String uri, wsSocketListener listener) throws URISyntaxException {
-
         mListener = listener;
         ZiggsWebSocketClient client = new ZiggsWebSocketClient(new URI(uri), new Draft_6455(), headers, 0);
         return client;
     }
 
     @Override
-    public void onOpen(ServerHandshake handshakedata) {
-        mListener.onOpen(handshakedata);
+    public void onOpen(ServerHandshake handshakedata) {mListener.onOpen(handshakedata);
+
     }
 
     @Override

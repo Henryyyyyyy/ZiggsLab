@@ -73,6 +73,7 @@ public class UDPSocketFactory {
     public void send(byte[] data) throws IOException {
         if (data == null)
             return;
+
         sendBuffer(data);
     }
 

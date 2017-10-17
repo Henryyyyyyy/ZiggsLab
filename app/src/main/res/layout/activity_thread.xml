@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_thread"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+>
+<TextView
+    android:id="@+id/start_thread"
+    android:layout_width="wrap_content"
+    android:padding="20dp"
+    android:background="@color/colorAccent"
+    android:layout_marginTop="20dp"
+    android:text="开启线程"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/interrupt_thread"
+        android:layout_width="wrap_content"
+        android:padding="20dp"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="20dp"
+        android:text="中断线程"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/testBtn"
+        android:layout_width="wrap_content"
+        android:padding="20dp"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="20dp"
+        android:text="测试按钮"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content" />
+</LinearLayout>
